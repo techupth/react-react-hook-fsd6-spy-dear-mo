@@ -1,29 +1,32 @@
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
+import useblogPost from "../hooks/useBlogPost";
 
 function ViewPostPage() {
-  const navigate = useNavigate();
+  const { posts, isError, isLoading, navigate } = useblogPost();
 
-  const [posts, setPosts] = useState([]);
-  const [isError, setIsError] = useState(null);
-  const [isLoading, setIsLoading] = useState(null);
+  // const navigate = useNavigate();
 
-  const getPosts = async () => {
-    try {
-      setIsError(false);
-      setIsLoading(true);
-      const results = await axios("http://localhost:4000/posts");
-      setPosts(results.data.data);
-      setIsLoading(false);
-    } catch (error) {
-      setIsError(true);
-    }
-  };
+  // const [posts, setPosts] = useState([]);
+  // const [isError, setIsError] = useState(null);
+  // const [isLoading, setIsLoading] = useState(null);
 
-  useEffect(() => {
-    getPosts();
-  }, []);
+  // const getPosts = async () => {
+  //   try {
+  //     setIsError(false);
+  //     setIsLoading(true);
+  //     const results = await axios("http://localhost:4000/posts");
+  //     setPosts(results.data.data);
+  //     setIsLoading(false);
+  //   } catch (error) {
+  //     setIsError(true);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getPosts();
+  // }, []);
 
   return (
     <div>
