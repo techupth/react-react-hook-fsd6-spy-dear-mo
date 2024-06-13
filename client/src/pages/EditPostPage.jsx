@@ -1,11 +1,14 @@
-import EditPostForm from "../components/EditPostForm";
+import EditPostForm from '../components/EditPostForm';
+import useBlogPosts from '../hooks/useBlogPosts';
 
 function EditPostPage() {
+  const { navigate } = useBlogPosts();
+
   return (
     <div>
       <h1>Edit Post Page</h1>
       <EditPostForm />
-      <button>Back to Home</button>
+      <button onClick={() => navigate('/')}>Back to Home</button>
     </div>
   );
 }

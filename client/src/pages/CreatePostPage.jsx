@@ -1,11 +1,14 @@
-import CreatePostForm from "../components/CreatePostForm";
+import CreatePostForm from '../components/CreatePostForm';
+import useBlogPosts from '../hooks/useBlogPosts';
 
 function CreatePostPage() {
+  const { navigate } = useBlogPosts();
+
   return (
     <div>
       <h1>Create Post Page</h1>
       <CreatePostForm />
-      <button>Back to Home</button>
+      <button onClick={() => navigate('/')}>Back to Home</button>
     </div>
   );
 }
